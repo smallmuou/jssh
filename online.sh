@@ -23,7 +23,7 @@
 
 set -e
 
-DST_DIR=/tmp/jssh
+DST_DIR=~/jssh
 
 rm -rf $DST_DIR
 git clone https://github.com/smallmuou/jssh $DST_DIR
