@@ -40,3 +40,5 @@ spushd $DST_DIR
 chmod 777 setup.sh
 ./setup.sh install
 spopd
+
+rm -rf $DST_DIR
