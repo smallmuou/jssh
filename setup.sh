@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (C) 2014 Wenva <lvyexuwenfa100@126.com>
 # 
@@ -72,8 +72,14 @@ BASH_PROFILE_TMP=$BASH_PROFILE.tmp
 touch $BASH_PROFILE
 
 # Build and Install
-sed -i '' '/export CLASSPATH=/'d $BASH_PROFILE
-sed -i '' '/alias jssh=/'d $BASH_PROFILE
+if [ `uname` == "Darwin" ];then
+    sed -i '' '/export CLASSPATH=/'d $BASH_PROFILE
+    sed -i '' '/alias jssh=/'d $BASH_PROFILE
+else
+    sed -i '/export CLASSPATH=/'d $BASH_PROFILE
+    sed -i '/alias jssh=/'d $BASH_PROFILE
+fi
+
 if [ $INSTALL == 1 ];then
     info "install jssh..."
     javac -d /usr/lib jssh.java

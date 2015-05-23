@@ -1,5 +1,4 @@
-
-#!/bin/sh
+#!/bin/bash
 #
 # Copyright (C) 2014 Wenva <lvyexuwenfa100@126.com>
 # 
