@@ -32,8 +32,12 @@ spopd() {
 
 home() {
     if [ `uname` != "Darwin" ];then
-        user=`who am i|awk '{print $1}'`
-        if [ $user != "root" ];then
+        user=$USER
+        if [ "$SUDO_USER" != "" ];then
+            user=$SUDO_USER
+        fi
+
+        if [ "$user" != "root" ];then
             echo "/home/$user"
         else
             echo $HOME
