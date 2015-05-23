@@ -101,10 +101,10 @@ if [ $INSTALL == 1 ];then
     javac -d /usr/lib jssh.java
     awk '{print $0}END{print "export CLASSPATH=$CLASSPATH:/usr/lib"}' $BASH_PROFILE > $BASH_PROFILE_TMP
     awk '{print $0}END{print "alias jssh=\"java jssh\""}' $BASH_PROFILE_TMP > $BASH_PROFILE
-    rm $BASH_PROFILE_TMP
+    rm -f $BASH_PROFILE_TMP
 else
     info "uninstall jssh..."
-    rm /usr/lib/jssh.class
+    rm -f /usr/lib/jssh.class
 fi
 
 source $BASH_PROFILE
