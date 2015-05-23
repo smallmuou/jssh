@@ -48,7 +48,6 @@ home() {
 }
 
 DST_DIR=$(home)/jssh
-echo $DST_DIR
 
 rm -rf $DST_DIR
 git clone https://github.com/smallmuou/jssh $DST_DIR
