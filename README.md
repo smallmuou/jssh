@@ -8,7 +8,7 @@ This tool depend on java. So you need install java first.
 ### Install
 1. Online 
 <pre>
-curl https://raw.githubusercontent.com/smallmuou/jssh/master/online-install.sh|sudo /bin/sh
+curl https://raw.githubusercontent.com/smallmuou/jssh/master/online-install.sh|sudo /bin/bash
 </pre>
 
 2. Manual
