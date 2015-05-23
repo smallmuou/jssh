@@ -48,6 +48,19 @@ DESCRIPTION:
 EOF
 }
 
+home() {
+    if [ `uname` != 'Darwin' ];then
+        user=`who am i|awk '{print $1}'`
+        if [ $user != root ];then
+            echo "/home/$user"
+        else
+            echo $HOME
+        fi
+    else
+        echo $HOME
+    fi
+}
+
 # Check Java Environment
 command -v java >/dev/null 2>&1 || { error >&2 "This tool depends on java, Please install java first."; exit -1; }
 
@@ -67,23 +80,21 @@ else
     exit -1
 fi
 
+HOME_DIR=$(home)
+
 # Build and Install
+BASH_PROFILE=$HOME_DIR/.bash_profile
+BASH_PROFILE_TMP=$BASH_PROFILE.tmp
+touch $BASH_PROFILE
+
 if [ `uname` == "Darwin" ];then
-    BASH_PROFILE=~/.bash_profile
     sed -i '' '/export CLASSPATH=/'d $BASH_PROFILE
     sed -i '' '/alias jssh=/'d $BASH_PROFILE
 else
-    user = `who am i|awk '{print $1}'`
-    echo user
-    if [ $user != "root" ];then
-        BASH_PROFILE=/home/user/.bash_profile
-    fi
     sed -i '/export CLASSPATH=/'d $BASH_PROFILE
     sed -i '/alias jssh=/'d $BASH_PROFILE
 fi
 
-BASH_PROFILE_TMP=$BASH_PROFILE.tmp
-touch $BASH_PROFILE
 
 if [ $INSTALL == 1 ];then
     info "install jssh..."
