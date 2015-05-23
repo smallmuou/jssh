@@ -15,13 +15,12 @@ curl https://raw.githubusercontent.com/smallmuou/jssh/master/online-install.sh|s
 <pre>
 git clone https://github.com/smallmuou/jssh
 cd jssh
-chmod 777 setup.sh
-sudo ./setup install
+sudo bash setup.sh install
 </pre>
 
 ### Uninstall
 <pre>
-sudo ./setup uninstall
+sudo bash setup.sh uninstall
 </pre>
 
 ### Usage
@@ -37,6 +36,7 @@ Hello jssh
 ### History
 * 1.0.0
 	* Support run javascript in shell
+	* Support Linux and Darwin
 
 ### License
 This tool follows MIT License.
