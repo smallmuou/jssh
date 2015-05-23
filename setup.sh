@@ -67,18 +67,23 @@ else
     exit -1
 fi
 
-BASH_PROFILE=~/.bash_profile
-BASH_PROFILE_TMP=$BASH_PROFILE.tmp
-touch $BASH_PROFILE
-
 # Build and Install
 if [ `uname` == "Darwin" ];then
+    BASH_PROFILE=~/.bash_profile
     sed -i '' '/export CLASSPATH=/'d $BASH_PROFILE
     sed -i '' '/alias jssh=/'d $BASH_PROFILE
 else
+    user = `who am i|awk '{print $1}'`
+    echo user
+    if [ $user != "root" ];then
+        BASH_PROFILE=/home/user/.bash_profile
+    fi
     sed -i '/export CLASSPATH=/'d $BASH_PROFILE
     sed -i '/alias jssh=/'d $BASH_PROFILE
 fi
+
+BASH_PROFILE_TMP=$BASH_PROFILE.tmp
+touch $BASH_PROFILE
 
 if [ $INSTALL == 1 ];then
     info "install jssh..."
