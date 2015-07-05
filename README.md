@@ -27,16 +27,45 @@ sudo bash setup.sh uninstall
 </pre>
 
 ### Usage
+the sample.js like follow.
 <pre>
-jssh sample.js
+print("Hello jssh");
+
+print("arg0 = " + $0);
+print("arg1 = " + $1);
+print("arg2 = " + $2);
+print("arg length = " + $n);
+</pre>
+and run follow command:
+<pre>
+jssh sample.js 123 345
 </pre>
 and the output is:
 <pre>
-StarnetdeMacBook-Pro:jssh starnet$ jssh sample.js 
 Hello jssh
+arg0 = sample.js
+arg1 = 123
+arg2 = 345
+arg length = 3
 </pre>
 
+* Comment
+	* arg must be less than 9.
+	* $0 - the name of js file
+	* $1 - arg1
+	* $2 - arg2
+	* $3 - arg3
+	* $4 - arg4
+	* $5 - arg5
+	* $6 - arg6
+	* $7 - arg7
+	* $8 - arg8
+	* $9 - arg9
+	* $n - arg length
+
 ### History
+* 1.1.0
+	* Support argument
 * 1.0.0
 	* Support run javascript in shell
 	* Support Linux and Darwin
