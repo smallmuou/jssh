@@ -5,6 +5,9 @@ jssh(javascript shell) is a command which can run javascript in shell. This is v
 ### Depend
 This tool depend on java. So you need install java first.
 
+1. goto http://www.oracle.com/technetwork/java/javase/downloads/index.html
+2. download sdk
+
 ### Install
 1. Online 
 <pre>

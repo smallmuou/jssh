@@ -1,5 +1,7 @@
-function hello() {  
-    print ('Hello jssh')
-}  
+print("Hello jssh");
 
-hello();  
+print("arg0 = " + $0);
+print("arg1 = " + $1);
+print("arg2 = " + $2);
+print("arg length = " + $n);
+
