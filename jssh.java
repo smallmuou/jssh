@@ -6,8 +6,9 @@ import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
 public class jssh {
+    public static String version = "1.1.0";
     public static void usage() {
-        System.out.println("Usage: jssh <javascript.js> [arg1 [arg2 [...]]]\nNotes: args must less then 9");
+        System.out.println("jssh "+version+" power by smallmuou\n\n"+"Usage: jssh <javascript.js> [arg1 [arg2 [...]]]\n\nNotes: args must less then 9");
     }
 
     public static boolean fileExists(String filename)
@@ -40,7 +41,7 @@ public class jssh {
     }
 
     public static void main(String[] args) {
-         if (args.length > 10) {
+         if (args.length > 10 || args.length < 1) {
              usage();
              return;
          }
