@@ -58,11 +58,7 @@ public class jssh {
 
         String content = readFile(args[0]);
         for (int i = 0; i < args.length; i++) {
-            if (isNumber(args[i])) {
-                content = content.replace("$"+i, args[i]);
-            } else {
-                content = content.replace("$"+i, "\""+args[i]+"\"");
-            }
+            content = content.replace("$"+i, "\""+args[i]+"\"");
         }
         content = content.replace("$n", ""+args.length);
 
