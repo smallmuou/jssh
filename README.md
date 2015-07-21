@@ -12,6 +12,8 @@ This tool depend on java. So you need install java first.
 1. Online 
 <pre>
 curl https://raw.githubusercontent.com/smallmuou/jssh/master/online-install.sh|sudo /bin/bash
+
+source ~/.bash_profile
 </pre>
 
 2. Manual
