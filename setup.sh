@@ -102,8 +102,8 @@ fi
 
 if [ $INSTALL == 1 ];then
     info "install jssh..."
-    javac -d /usr/lib jssh.java
-    awk '{print $0}END{print "export CLASSPATH=$CLASSPATH:/usr/lib"}' $BASH_PROFILE > $BASH_PROFILE_TMP
+    javac -d /usr/local/lib jssh.java
+    awk '{print $0}END{print "export CLASSPATH=$CLASSPATH:/usr/local/lib"}' $BASH_PROFILE > $BASH_PROFILE_TMP
     awk '{print $0}END{print "alias jssh=\"java jssh\""}' $BASH_PROFILE_TMP > $BASH_PROFILE
     rm -f $BASH_PROFILE_TMP
 else
